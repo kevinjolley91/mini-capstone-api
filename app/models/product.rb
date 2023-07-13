@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  validates :name, :price, :description, :image_url, presence: true
+  validates :name, :price, :description, :image_url, :quantity, presence: true
 
   def is_discounted?
     result = false
