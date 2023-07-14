@@ -33,10 +33,3 @@ class SuppliersController < ApplicationController
     render json: { message: "Supplier removed." }
   end
 end
-
-# @product = Product.create(
-#   name: params["name"],
-#   price: params["price"],
-#   image_url: params["image_url"],
-#   description: params["description"],
-# )
