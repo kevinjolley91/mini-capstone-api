@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   delete "/suppliers/:id" => "suppliers#delete"
   get "/images" => "images#index"
   get "/images/:id" => "images#show"
+  post "/images" => "images#create"
+  patch "/images/:id" => "images#update"
+  delete "/images/:id" => "images#delete"
 end
