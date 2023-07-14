@@ -1,6 +1,10 @@
 class Product < ApplicationRecord
   validates :name, :price, :description, :image_url, :quantity, presence: true
 
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
+
   def is_discounted?
     result = false
     result = true if price <= 300
