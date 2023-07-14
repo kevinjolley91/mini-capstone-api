@@ -15,6 +15,8 @@ class ProductsController < ApplicationController
       price: params[:price],
       image: params[:image],
       description: params[:description],
+      quantity: params[:quantity],
+      supplier_id: params[:supplier_id],
     )
     if @product.save
       render :show
@@ -30,6 +32,8 @@ class ProductsController < ApplicationController
       price: params[:price] || @product.price,
       image: params[:image] || @product.image,
       description: params[:description] || @product.description,
+      quantity: params[:quantity] || @product.quantity,
+      supplier_id: params[:supplier_id] || @product.supplier_id,
     )
     if @product.save
       render :show
