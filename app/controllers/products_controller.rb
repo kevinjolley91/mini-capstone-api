@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @product = Product.create(
       name: params[:name],
       price: params[:price],
-      url: params[:url],
+      image: params[:image],
       description: params[:description],
     )
     if @product.save
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     @product.update(
       name: params[:name] || @product.name,
       price: params[:price] || @product.price,
-      url: params[:url] || @product.url,
+      image: params[:image] || @product.image,
       description: params[:description] || @product.description,
     )
     if @product.save
