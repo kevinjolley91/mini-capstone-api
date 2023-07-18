@@ -1,1 +1,1 @@
-json.extract! supplier, :id, :name, :email, :phone_number
+json.extract! supplier, :id, :name, :email, :phone_number, :products
