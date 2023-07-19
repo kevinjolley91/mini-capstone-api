@@ -2,7 +2,8 @@ class Product < ApplicationRecord
   validates :name, :price, :description, :quantity, presence: true
   # :image_url,
   belongs_to :supplier
-  has_many :images, :orders
+  has_many :images
+  has_many :orders
 
   def supplier
     Supplier.find_by(id: supplier_id)
