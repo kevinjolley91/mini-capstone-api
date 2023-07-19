@@ -16,12 +16,20 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find_by(id: params[:id])
-    render :show
+    @order = current_user.orders.find_by(id: params[:id])
+    if @order
+      render :show
+    else
+      render json: { errors: @order.errors.full_messages }
+    end
   end
 
   def index
-    @orders = Order.all
-    render :index
+    @orders = current_user.orders
+    if @order
+      render :index
+    else
+      render json: { errors: @order.errors.full_messages }
+    end
   end
 end
