@@ -4,14 +4,14 @@ class OrdersController < ApplicationController
       user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      subtotal: params[:quantity],
-      tax: params[:tax],
-      total: params[:total],
+      subtotal: Product.find_by(id: params[:product_id]).price,
+      tax: Product.find_by(id: params[:product_id]).tax,
+      total: Product.find_by(id: params[:product_id]).total,
     )
     if @order.save
       render json: { message: "Order accepted." }
     else
-      render json: { message: "Order declined." }
+      render json: { errors: @order.errors.full_messages }
     end
   end
 
