@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     pp current_user
     @products = Product.all
@@ -14,7 +16,7 @@ class ProductsController < ApplicationController
     @product = Product.create(
       name: params[:name],
       price: params[:price],
-      image: params[:image],
+      images: params[:images],
       description: params[:description],
       quantity: params[:quantity],
       supplier_id: params[:supplier_id],
@@ -31,7 +33,7 @@ class ProductsController < ApplicationController
     @product.update(
       name: params[:name] || @product.name,
       price: params[:price] || @product.price,
-      image: params[:image] || @product.image,
+      images: params[:images] || @product.images,
       description: params[:description] || @product.description,
       quantity: params[:quantity] || @product.quantity,
       supplier_id: params[:supplier_id] || @product.supplier_id,
