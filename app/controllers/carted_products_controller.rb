@@ -5,7 +5,6 @@ class CartedProductsController < ApplicationController
       product_id: params[:product_id],
       quantity: params[:quantity],
       status: "carted",
-      order_id: "nil",
     )
     render :show
   end
