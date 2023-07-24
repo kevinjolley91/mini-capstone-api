@@ -4,9 +4,9 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(
       user_id: current_user.id,
-      subtotal: Product.find_by(id: params[:product_id]).price,
-      tax: Product.find_by(id: params[:product_id]).tax,
-      total: Product.find_by(id: params[:product_id]).total,
+      subtotal: Product.find_by(id: CartedProduct.product_id).price * CartedProduct.quantity,
+      tax: Product.find_by(id: CartedProduct.product_id).tax * CartedProduct.quantity,
+      total: Product.find_byproduct_(id: CartedProduct.product_id).total * CartedProduct.quantity,
     )
     if @order.save
       render json: { message: "Order accepted." }
