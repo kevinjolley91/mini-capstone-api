@@ -37,6 +37,12 @@ Order.create!([
 Image.create!([
   {url: "https://m.media-amazon.com/images/I/815BH+jP6xS._AC_SL1500_.jpg, https://m.media-amazon.com/images/I/81B2tCDJWgS._AC_SL1500_.jpg", product_id: 1}
 ])
+Category.create!([
+  {name: "Storage"},
+  {name: "Cooling"},
+  {name: "Performance Parts"},
+  {name: "RGB Equipped"}
+])
 CategoryProduct.create!([
   {product_id: 2, category_id: 3},
   {product_id: 14, category_id: 1},
@@ -47,21 +53,8 @@ CategoryProduct.create!([
   {product_id: 1, category_id: 3},
   {product_id: 5, category_id: 1}
 ])
-Category.create!([
-  {name: "Storage"},
-  {name: "Cooling"},
-  {name: "Performance Parts"},
-  {name: "RGB Equipped"}
-])
 CartedProduct.create!([
   {product_id: 5, user_id: 2, quantity: 2, status: "in_cart", order_id: 0},
-  {product_id: 5, user_id: 2, quantity: 2, status: "in_cart", order_id: 0},
-  {product_id: 5, user_id: 2, quantity: 2, status: "in_cart", order_id: 0},
-  {product_id: 5, user_id: 2, quantity: 2, status: "in_cart", order_id: 0},
-  {product_id: 5, user_id: 2, quantity: 2, status: "in_cart", order_id: 0},
   {product_id: 5, user_id: 1, quantity: 2, status: "in_cart", order_id: 0},
-  {product_id: 5, user_id: 1, quantity: 2, status: "in_cart", order_id: 0},
-  {product_id: 5, user_id: 1, quantity: 2, status: "carted", order_id: 0},
   {product_id: 5, user_id: 2, quantity: 2, status: "purchased", order_id: nil},
-  {product_id: 5, user_id: 2, quantity: 2, status: "purchased", order_id: nil}
 ])
