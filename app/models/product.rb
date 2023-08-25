@@ -1,6 +1,5 @@
 class Product < ApplicationRecord
-  validates :name, :price, :description, :quantity, presence: true
-  # :image_url,
+  validates :name, :price, :description, :quantity, :supplier_id, :images, presence: true
   belongs_to :supplier
   has_many :images
   has_many :carted_products
